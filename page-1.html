@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='box.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title> 4- you </title>
+    
+
+</head>
+
+<body align="center">
+
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Alert! </strong>Please. Teruskan tersenyum kerana dirimu begitu berharga
+    </div>
+
+    <div id="confirm">
+        <div class="message"></div>
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+    </div>
+    <button onclick='functionConfirm("Are you okay?", function yes() {
+        alert("Well, tahniah sbb berjaya bertahan sehingga harini, teruskan lagi okay ")
+        window.location.replace("page-2.html")
+    },
+     function no() {
+        alert("Why babe ? Kalau perlukan tempat luahkan perasaan, text me ;)")
+        window.location.replace("page-1.html")
+    });'>Are you okay?</button>
+
+    <br></br>
+
+    <script>
+
+        function myFunction() {
+            var txt;
+            var person = prompt("Please enter your name:", " ");
+            if (person == null || person == "") {
+                txt = "User cancelled the prompt.";
+            } else {
+                txt = "Hello " + person + "! How are you today?";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+
+
+        function functionConfirm(msg, myYes, myNo) {
+            var confirmBox = $("#confirm");
+            confirmBox.find(".message").text(msg);
+            confirmBox.find(".yes,.no").unbind().click(function () {
+                confirmBox.hide();
+            });
+            confirmBox.find(".yes").click(myYes);
+            confirmBox.find(".no").click(myNo);
+            confirmBox.show();
+        }
+
+        function functionConfirm1(msg, myYes, myNo) {
+            var confirmBox = $("#confirm");
+            confirmBox.find(".message").text(msg);
+            confirmBox.find(".yes,.no").unbind().click(function () {
+                confirmBox.hide();
+            });
+            confirmBox.find(".yes").click(myYes);
+            confirmBox.find(".no").click(myNo);
+            confirmBox.show();
+        }
+    </script>
+</body>
+
+</html>
+
+<br></br>
+
+FarishaJefree © 2021 GitHub, Inc.
